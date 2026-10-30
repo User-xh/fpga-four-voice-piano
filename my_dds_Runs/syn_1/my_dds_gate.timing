@@ -1,0 +1,1309 @@
+Created by          : Tang Dynasty Release_2026.1_SP3
+                    : Copyright (c) 2012-2026 Anlogic Inc.
+Generated           : Fri Oct 30 16:16:31 2026
+
+Top Model           : top_system
+Device              : PH1A180SFG676
+Speed               : 2
+STA coverage        : 92.45%
+Constraint File     : 
+Confidence          : Synthesized
+Check Corner        : Both (Slow and Fast)
+CRPR Enabled        : Yes
+Report Scheme       : 10 end point(s) per path group, 1 path(s) per end point
+
+
+Check Status
+-------------
+
+Corner   | Max      Min     
+------------------------------------
+Slow     | yes      yes     
+Fast     | yes      yes     
+
+
+Timing Status
+--------------------
+	SWNS: 3.864ns, STNS: 0.000ns
+	HWNS: 0.000ns, HTNS: 0.000ns
+	Period Check WNS: 18.470ns
+
+
+Clock Summary
+--------------------
+
+       Clock-Id:       C-Freq       Fanout   Clock-Name
+--------------------------------------------------------------------------------
+           clk0:       50.000          687   DeriveClock
+--------------------------------------------------------------------------------
+
+       Name            Type         Rise(ns)   Fall(ns)          C-Period(ns)     C-Freq(MHz)          R-Period(ns)     R-Freq(MHz)         SWNS(ns)   STNS(ns)         HWNS(ns)   HTNS(ns)         Skew(ns)           Fanout        Max-Level        CC-From    CC-To
+       clk0           local            0.000     10.000                20.000          50.000                16.136          61.973            3.864      0.000            0.000      0.000            0.000              687               18             no       no
+
+Notes
+----------
+C-Period  :  constraint period
+C-Freq    :  constraint freq
+R-Period  :  report min period
+R-Freq    :  report fmax
+CC-From   :  has path(s) from cross-domain clock
+CC-To     :  has path(s) to cross-domain clock
+
+
+*   Clock R-Period data only takes intra-clock timing. SWNS/STNS/HWNS/HTNS take both intra-clock and inter-clock timing.
+*   If there is mismatch between R-Period and SWNS, check inter-clock timing of this clock as capture clock.
+*   SWNS/STNS/HWNS/HTNS of timing exception (SMCP/SMD) only counted in global Timing Status, not counted in Clock Summary.
+
+Intra clock domain timing
+--------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     DeriveClock -> DeriveClock
+Type           :     Self
+From Clock     :     DeriveClock
+To Clock       :     DeriveClock
+Min Period     :     16.136ns
+Fmax           :     61.973MHz
+
+Statistics:
+Max            : SWNS      3.864ns, STNS      0.000ns,         0 Viol Endpoints,       942 Total Endpoints,  47852681 Paths Analyzed
+Min            : HWNS      0.000ns, HTNS      0.000ns,         0 Viol Endpoints,         0 Total Endpoints,         0 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 3.864ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : au/u_ao/l_data_reg[15].d (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 16.069ns (cell 6.031ns (37%), net 10.038ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=3  LUT4=3  LUT3=2  LUT5=1  LUT2=1  LUT1=1  DSPMULT=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_375.a
+LUT4                                    0.228    r    14.800      17  pin: au/u_mix/sel0_syn_375.o
+net (fo=3)                              0.520         15.320          net: au/u_mix/sel0_syn_62,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_411.a
+LUT1                                    0.228    r    15.548      18  pin: au/u_mix/sel0_syn_411.o
+net (fo=1)                              0.448         15.996          net: au/u_mix/sel0_syn_2[13],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_ao/l_data_reg[15].d
+SEQ (reg)                               0.073    f    16.069               
+--------------------------------------------------------------------  ---------------
+Arrival                                               16.069               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.067         19.933               
+clock uncertainty                       0.000         19.933               
+clock pessimism                         0.000         19.933               
+--------------------------------------------------------------------  ---------------
+Required                                              19.933               
+--------------------------------------------------------------------  ---------------
+Slack                                                  3.864               
+
+Slack               : 4.515ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_61.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.320ns (cell 5.730ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=3  LUT4=3  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_375.a
+LUT4                                    0.228    r    14.800      17  pin: au/u_mix/sel0_syn_375.o
+net (fo=3)                              0.520         15.320          net: au/u_mix/sel0_syn_62,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_61.imb
+DRAM (reg)                              0.000    f    15.320      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.320               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.515               
+
+Slack               : 4.515ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_81.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.320ns (cell 5.730ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=3  LUT4=3  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_375.a
+LUT4                                    0.228    r    14.800      17  pin: au/u_mix/sel0_syn_375.o
+net (fo=3)                              0.520         15.320          net: au/u_mix/sel0_syn_62,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_81.imb
+DRAM (reg)                              0.000    f    15.320      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.320               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.515               
+
+Slack               : 4.516ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_57.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.319ns (cell 5.729ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=4  LUT4=2  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_401.a
+LUT6                                    0.227    r    14.799      17  pin: au/u_mix/sel0_syn_401.o
+net (fo=3)                              0.520         15.319          net: au/u_mix/sel0_syn_2[7],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_57.imb
+DRAM (reg)                              0.000    f    15.319      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.319               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.516               
+
+Slack               : 4.516ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_58.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.319ns (cell 5.729ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=4  LUT4=2  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_404.a
+LUT6                                    0.227    r    14.799      17  pin: au/u_mix/sel0_syn_404.o
+net (fo=3)                              0.520         15.319          net: au/u_mix/sel0_syn_2[8],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_58.imb
+DRAM (reg)                              0.000    f    15.319      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.319               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.516               
+
+Slack               : 4.516ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_59.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.319ns (cell 5.729ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=4  LUT4=2  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_407.a
+LUT6                                    0.227    r    14.799      17  pin: au/u_mix/sel0_syn_407.o
+net (fo=3)                              0.520         15.319          net: au/u_mix/sel0_syn_2[9],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_59.imb
+DRAM (reg)                              0.000    f    15.319      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.319               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.516               
+
+Slack               : 4.516ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_60.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.319ns (cell 5.729ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=4  LUT4=2  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_410.a
+LUT6                                    0.227    r    14.799      17  pin: au/u_mix/sel0_syn_410.o
+net (fo=3)                              0.520         15.319          net: au/u_mix/sel0_syn_2[10],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_60.imb
+DRAM (reg)                              0.000    f    15.319      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.319               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.516               
+
+Slack               : 4.516ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_77.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.319ns (cell 5.729ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=4  LUT4=2  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_401.a
+LUT6                                    0.227    r    14.799      17  pin: au/u_mix/sel0_syn_401.o
+net (fo=3)                              0.520         15.319          net: au/u_mix/sel0_syn_2[7],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_77.imb
+DRAM (reg)                              0.000    f    15.319      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.319               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.516               
+
+Slack               : 4.516ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_78.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.319ns (cell 5.729ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=4  LUT4=2  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_404.a
+LUT6                                    0.227    r    14.799      17  pin: au/u_mix/sel0_syn_404.o
+net (fo=3)                              0.520         15.319          net: au/u_mix/sel0_syn_2[8],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_78.imb
+DRAM (reg)                              0.000    f    15.319      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.319               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.516               
+
+Slack               : 4.516ns
+Begin Point         : au/u_scan/key_state_reg[0].clk (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : vz/ren/ramread0_syn_79.imb (rising edge triggered by clock DeriveClock  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { DeriveClock rising@20.000ns - DeriveClock rising@0.000ns }
+Data Path Delay     : 15.319ns (cell 5.729ns (37%), net 9.590ns (63%))
+Clock Skew          : 0.000ns
+Logic Level         : 18 ( ADDER=6  LUT6=4  LUT4=2  LUT3=2  LUT5=1  LUT2=1  DSPMULT=1  DRAM=1 )
+Max Fanout          : 54
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.144    f     0.144          pin: au/u_scan/key_state_reg[0].q
+net (fo=54)                             0.948          1.092          net: au/u_assign/key_state[0],  ../../uisrc/01_rtl/voice_assign.v(8)
+                                                                      pin: au/key_gain_b4[6]_syn_2.a
+LUT6                                    0.227    r     1.319       1  pin: au/key_gain_b4[6]_syn_2.o
+net (fo=10)                             0.693          2.012          net: au/key_gain_b4[6]_syn_3,  NOFILE(0)
+                                                                      pin: au/key_gain_b4[6]_syn_12.c
+LUT6                                    0.227    r     2.239       2  pin: au/key_gain_b4[6]_syn_12.o
+net (fo=14)                             0.746          2.985          net: au/u_assign/dec9_syn_32,  ../../uisrc/01_rtl/voice_assign.v(47)
+                                                                      pin: au/key_gain_b4[6]_syn_15.c
+LUT5                                    0.228    r     3.213       3  pin: au/key_gain_b4[6]_syn_15.o
+net (fo=16)                             0.766          3.979          net: au/key_gain_b4[6]_syn_16,  NOFILE(0)
+                                                                      pin: au/c2/u_env/acc_reg[2]_syn_32.a
+LUT4                                    0.228    r     4.207       4  pin: au/c2/u_env/acc_reg[2]_syn_32.o
+net (fo=6)                              0.615          4.822          net: au/u_assign/v_gate_b2[0]_syn_2,  NOFILE(0)
+                                                                      pin: au/c0/u_env/acc_reg[2]_syn_17.b
+LUT4                                    0.228    r     5.050       5  pin: au/c0/u_env/acc_reg[2]_syn_17.o
+net (fo=23)                             0.822          5.872          net: au/c0/u_env/acc_b4_n,  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_357.a
+LUT3                                    0.228    r     6.100       6  pin: au/u_mix/sel0_syn_357.o
+net (fo=24)                             0.828          6.928          net: au/u_mix/mux0_syn_16,  ../../uisrc/01_rtl/mixer.v(22)
+                                                                      pin: au/u_mix/add3_syn_77.id
+ADDER                                   0.243    f     7.171       7  pin: au/u_mix/add3_syn_77.fco
+net (fo=1)                              0.000          7.171          net: au/u_mix/add3_syn_63,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_78.fci
+ADDER                                   0.065    f     7.236          pin: au/u_mix/add3_syn_78.fco
+net (fo=1)                              0.000          7.236          net: au/u_mix/add3_syn_64,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_79.fci
+ADDER                                   0.065    f     7.301          pin: au/u_mix/add3_syn_79.fco
+net (fo=1)                              0.000          7.301          net: au/u_mix/add3_syn_65,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_80.fci
+ADDER                                   0.065    f     7.366          pin: au/u_mix/add3_syn_80.fco
+net (fo=1)                              0.000          7.366          net: au/u_mix/add3_syn_66,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_81.fci
+ADDER                                   0.065    f     7.431          pin: au/u_mix/add3_syn_81.fco
+net (fo=1)                              0.000          7.431          net: au/u_mix/add3_syn_67,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_82.fci
+ADDER                                   0.065    f     7.496          pin: au/u_mix/add3_syn_82.fco
+net (fo=1)                              0.000          7.496          net: au/u_mix/add3_syn_68,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_83.fci
+ADDER                                   0.065    f     7.561          pin: au/u_mix/add3_syn_83.fco
+net (fo=1)                              0.000          7.561          net: au/u_mix/add3_syn_69,  ../../uisrc/01_rtl/mixer.v(23)
+                                                                      pin: au/u_mix/add3_syn_84.fci
+ADDER                                   0.194    r     7.755       8  pin: au/u_mix/add3_syn_84.ofb
+net (fo=1)                              0.448          8.203          net: au/u_mix/sum_b6[7],  NOFILE(0)
+                                                                      pin: au/u_mix/sel0_syn_365.f
+LUT6                                    0.227    r     8.430       9  pin: au/u_mix/sel0_syn_365.o
+net (fo=4)                              0.556          8.986          net: au/u_mix/sum_b2[7],  NOFILE(0)
+                                                                      pin: au/u_mix/add4_syn_83.id
+ADDER                                   0.349    f     9.335      10  pin: au/u_mix/add4_syn_83.fco_f
+net (fo=1)                              0.079          9.414          net: au/u_mix/add4_syn_97,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_84.fci_f
+ADDER                                   0.065    f     9.479          pin: au/u_mix/add4_syn_84.fco
+net (fo=1)                              0.000          9.479          net: au/u_mix/add4_syn_70,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_85.fci
+ADDER                                   0.065    f     9.544          pin: au/u_mix/add4_syn_85.fco
+net (fo=1)                              0.000          9.544          net: au/u_mix/add4_syn_71,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_86.fci
+ADDER                                   0.065    f     9.609          pin: au/u_mix/add4_syn_86.fco
+net (fo=1)                              0.000          9.609          net: au/u_mix/add4_syn_72,  ../../uisrc/01_rtl/mixer.v(24)
+                                                                      pin: au/u_mix/add4_syn_87.fci
+ADDER                                   0.194    r     9.803      11  pin: au/u_mix/add4_syn_87.ofb
+net (fo=2)                              0.478         10.281          net: au/u_mix/sum_b3[11],  NOFILE(0)
+                                                                      pin: au/u_mix/add5_syn_86.ia
+ADDER                                   0.477    f    10.758      12  pin: au/u_mix/add5_syn_86.fco_f
+net (fo=1)                              0.079         10.837          net: au/u_mix/add5_syn_100,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_87.fci_f
+ADDER                                   0.065    f    10.902          pin: au/u_mix/add5_syn_87.fco
+net (fo=1)                              0.000         10.902          net: au/u_mix/add5_syn_73,  ../../uisrc/01_rtl/mixer.v(25)
+                                                                      pin: au/u_mix/add5_syn_88.fci
+ADDER                                   0.194    r    11.096      13  pin: au/u_mix/add5_syn_88.ofb
+net (fo=2)                              0.478         11.574          net: au/u_mix/sum_b1[13],  NOFILE(0)
+                                                                      pin: au/u_mix/sum[13]_syn_2.c
+LUT3                                    0.228    r    11.802      14  pin: au/u_mix/sum[13]_syn_2.o
+net (fo=14)                             0.448         12.250          net: au/u_mix/sum[13],  ../../uisrc/01_rtl/mixer.v(19)
+                                                                      pin: au/u_mix/mult0_syn_58.xa[13]
+DSPSIOU                                 0.247    f    12.497          pin: au/u_mix/mult0_syn_58.mult_x[13]
+net (fo=1)                              0.000         12.497          net: au/u_mix/mult0_syn_60[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_59.x[13]
+DSPMULT                                 0.579    r    13.076      15  pin: au/u_mix/mult0_syn_59.p[13]
+net (fo=1)                              0.000         13.076          net: au/u_mix/mult0_syn_106[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/mult0_syn_58.mult_p[13]
+DSPSIOU                                 0.182    f    13.258          pin: au/u_mix/mult0_syn_58.p[13]
+net (fo=1)                              0.448         13.706          net: au/u_mix/mult0_syn_4[13],  ../../uisrc/01_rtl/mixer.v(31)
+                                                                      pin: au/u_mix/sel0_syn_371.b
+LUT2                                    0.228    r    13.934      16  pin: au/u_mix/sel0_syn_371.o
+net (fo=7)                              0.638         14.572          net: au/u_mix/sel0_syn_372,  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: au/u_mix/sel0_syn_407.a
+LUT6                                    0.227    r    14.799      17  pin: au/u_mix/sel0_syn_407.o
+net (fo=3)                              0.520         15.319          net: au/u_mix/sel0_syn_2[9],  ../../uisrc/01_rtl/mixer.v(27)
+                                                                      pin: vz/ren/ramread0_syn_79.imb
+DRAM (reg)                              0.000    f    15.319      18       
+--------------------------------------------------------------------  ---------------
+Arrival                                               15.319               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.165         19.835               
+clock uncertainty                       0.000         19.835               
+clock pessimism                         0.000         19.835               
+--------------------------------------------------------------------  ---------------
+Required                                              19.835               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.516               
+
+
+Period Check
+----------------------------------------------------------------------------------------------------
+    Type       Setting(ns)      Required(ns)         Slack(ns)   Point
+--------------------------------------------------------------------------------
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_887.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_747.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_767.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_787.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_807.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_827.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_847.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_867.wclk
+    DRAM            20.000             1.530            18.470   vz/ren/ramread0_syn_65.wclk
+    DRAM            20.000             1.530            18.470   vz/ren/ramread0_syn_85.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_587.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_607.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_627.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_647.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_667.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_687.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_707.wclk
+    DRAM            20.000             1.530            18.470   vz/fb/ramread0_syn_727.wclk
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+
+Inter clock domain timing
+--------------------------------------------------
+
+IP timing
+--------------------------------------------------

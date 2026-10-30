@@ -1,0 +1,59 @@
+standard
+***Report Model: top_system Device: PH1A180SFG676***
+
+IO Statistics
+#IO                        15
+  #input                    6
+  #output                   9
+  #inout                    0
+
+Gate Statistics
+#Basic gates             1733
+  #and                    421
+  #nand                     0
+  #or                     323
+  #nor                      0
+  #xor                      0
+  #xnor                     0
+  #buf                      0
+  #not                    262
+  #bufif1                   0
+  #MX21                   196
+  #FADD                     0
+  #DFF                    531
+  #LATCH                    0
+#MACRO_ADD                 70
+#MACRO_EQ                  19
+#MACRO_MULT                 5
+#MACRO_MUX               1147
+
+Report Hierarchy Area:
++----------------------------------------------------+
+|Instance     |Module        |gates  |seq    |macros |
++----------------------------------------------------+
+|top          |top_system    |1202   |531    |94     |
+|  au         |top_audio     |618    |361    |63     |
+|    c0       |voice_chan    |16     |72     |8      |
+|      u_env  |adsr_env      |13     |28     |5      |
+|      u_nco  |dds_nco       |0      |44     |1      |
+|    c1       |voice_chan    |14     |72     |8      |
+|      u_env  |adsr_env      |12     |28     |5      |
+|      u_nco  |dds_nco       |0      |44     |1      |
+|    c2       |voice_chan    |14     |72     |8      |
+|      u_env  |adsr_env      |12     |28     |5      |
+|      u_nco  |dds_nco       |0      |44     |1      |
+|    c3       |voice_chan    |14     |72     |8      |
+|      u_env  |adsr_env      |12     |28     |5      |
+|      u_nco  |dds_nco       |0      |44     |1      |
+|    u_ao     |audio_out     |1      |22     |2      |
+|    u_assign |voice_assign  |513    |0      |12     |
+|    u_i2s    |i2s_tx        |16     |18     |4      |
+|    u_mix    |mixer         |19     |0      |10     |
+|    u_scan   |keyscan_multi |6      |33     |3      |
+|  vz         |top_viz       |339    |150    |29     |
+|    fb       |oled_fb       |65     |12     |2      |
+|    fl       |oled_flush    |119    |35     |4      |
+|    i2c      |i2c_master    |29     |32     |7      |
+|    ini      |ssd1306_init  |86     |24     |2      |
+|    ren      |viz_render    |36     |47     |14     |
++----------------------------------------------------+

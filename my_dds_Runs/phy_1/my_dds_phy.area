@@ -1,0 +1,117 @@
+standard
+***Report Model: top_system Device: PH1A180SFG676***
+
+Design Statistics
+#IO                        15   out of    376    3.99%
+  #input                    6
+  #output                   9
+  #inout                    0
+#lut6                    1400   out of 116800    1.20%
+#reg                      544
+  #slice reg              544   out of 233600    0.23%
+  #pad reg                  0
+
+Utilization Statistics
+#slice                   1401   out of 116800    1.20%
+  #used ram               144
+    #dram lut             144
+    #shifter lut            0
+  #used logic            1257
+    #with luts            901
+    #with adder           355
+    #reg only               1
+#feedthrough              493
+#f7mux                     98   out of  58400    0.17%
+#f8mux                     49   out of  29200    0.17%
+#eram                       1   out of    646    0.15%
+  #eram20k                  1
+  #fifo20k                  0
+#dsp                        5   out of    600    0.83%
+#pcie                       0   out of      1    0.00%
+#serdes dual                0   out of      4    0.00%
+#ddr_cal                    0   out of      1    0.00%
+#ddr_bank                   0   out of      3    0.00%
+#pad                       15   out of    376    3.99%
+#pll                        0   out of     16    0.00%
+#gclk                       1   out of     32    3.12%
+#lclk                       0   out of     44    0.00%
+#sclk                       4   out of    120    3.33%
+#mlclk                      0   out of     22    0.00%
+#ioclk                      0   out of     24    0.00%
+
+
+Detailed IO Report
+
+     Name       Direction    Location    IOStandard    IOType    DriveStrength    PullType    PackReg    DiffResistor  
+     clk          INPUT        Y23        LVCMOS33      HRIO          N/A          PULLUP      NONE          NONE      
+  col_in[3]       INPUT         V1        LVCMOS18      HPIO          N/A          PULLUP      NONE          NONE      
+  col_in[2]       INPUT         V2        LVCMOS18      HPIO          N/A          PULLUP      NONE          NONE      
+  col_in[1]       INPUT        AC3        LVCMOS18      HPIO          N/A          PULLUP      NONE          NONE      
+  col_in[0]       INPUT        AC4        LVCMOS18      HPIO          N/A          PULLUP      NONE          NONE      
+    rst_n         INPUT         F9        LVCMOS18      HRIO          N/A          PULLUP      NONE          NONE      
+     bck         OUTPUT        AF3        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+     din         OUTPUT        AE3        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+     lrck        OUTPUT        AF2        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+   oled_scl      OUTPUT        AE2        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+   oled_sda      OUTPUT        AD1        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+  row_out[3]     OUTPUT        AF4        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+  row_out[2]     OUTPUT        AF5        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+  row_out[1]     OUTPUT         Y5        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+  row_out[0]     OUTPUT         Y6        LVCMOS18      HPIO           8            NONE       NONE          NONE      
+
+Report Clock Domain Luts:
+
+------------------------------------------------------------------------------------------------------------------
+  Index   |  Name         |  Frequency   |  LUT As Logic   |  LUT As Shifter   |  LUT As Dram   |  BRAM   |  DSP
+------------------------------------------------------------------------------------------------------------------
+  #1      |  DeriveClock  |  50MHz       |  1444           |  0                |  138           |  1      |  5
+------------------------------------------------------------------------------------------------------------------
+
+Clock Resource Statistics
+Index     ClockNet     Type            DriverType         Driver          ClockFanout        GclkLocation
+#1        clk_dup_1    InferredGclk    io                 clk_syn_2.di    479                x51y99z0
+
+Report Hierarchy Area:
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+|Instance     |Module        |logic lut |ripple  |seq     |eram    |dsp     |dram lut |shifter lut |f7mux   |f8mux   |pll     |serdes   |pcie    |ddr     |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+|top          |top_system    |901       |355     |544     |1       |5       |144      |0           |98      |49      |0       |0        |0       |0       |
+|  au         |top_audio     |619       |336     |351     |0       |5       |0        |0           |72      |36      |0       |0        |0       |0       |
+|    c0       |voice_chan    |75        |76      |69      |0       |1       |0        |0           |18      |9       |0       |0        |0       |0       |
+|      u_env  |adsr_env      |33        |44      |25      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|      u_nco  |dds_nco       |42        |32      |44      |0       |0       |0        |0           |18      |9       |0       |0        |0       |0       |
+|    c1       |voice_chan    |75        |76      |69      |0       |1       |0        |0           |18      |9       |0       |0        |0       |0       |
+|      u_env  |adsr_env      |32        |44      |25      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|      u_nco  |dds_nco       |43        |32      |44      |0       |0       |0        |0           |18      |9       |0       |0        |0       |0       |
+|    c2       |voice_chan    |86        |76      |69      |0       |1       |0        |0           |18      |9       |0       |0        |0       |0       |
+|      u_env  |adsr_env      |43        |44      |25      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|      u_nco  |dds_nco       |43        |32      |44      |0       |0       |0        |0           |18      |9       |0       |0        |0       |0       |
+|    c3       |voice_chan    |78        |76      |69      |0       |1       |0        |0           |18      |9       |0       |0        |0       |0       |
+|      u_env  |adsr_env      |36        |44      |25      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|      u_nco  |dds_nco       |42        |32      |44      |0       |0       |0        |0           |18      |9       |0       |0        |0       |0       |
+|    u_assign |voice_assign  |18        |0       |0       |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|    u_mix    |mixer         |65        |14      |0       |0       |1       |0        |0           |0       |0       |0       |0        |0       |0       |
+|    u_scan   |keyscan_multi |20        |18      |33      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|    u_i2s    |i2s_tx        |11        |0       |19      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|    u_ao     |audio_out     |20        |0       |23      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|  vz         |top_viz       |268       |0       |173     |1       |0       |144      |0           |26      |13      |0       |0        |0       |0       |
+|    fb       |oled_fb       |64        |0       |12      |1       |0       |128      |0           |16      |8       |0       |0        |0       |0       |
+|    fl       |oled_flush    |57        |0       |57      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|    i2c      |i2c_master    |42        |0       |34      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|    ini      |ssd1306_init  |25        |0       |23      |0       |0       |0        |0           |0       |0       |0       |0        |0       |0       |
+|    ren      |viz_render    |80        |0       |47      |0       |0       |16       |0           |10      |5       |0       |0        |0       |0       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout     Nets  
+    #1          1       2346  
+    #2          2       232   
+    #3          3       116   
+    #4          4        92   
+    #5        5-10      335   
+    #6        11-50     174   
+    #7       51-100      1    
+    #8       101-500     1    
+  Average     3.05            

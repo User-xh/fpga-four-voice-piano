@@ -1,0 +1,23 @@
+Location         : D:\FPGA-2\my_projects\my_dds\my_dds_Runs\phy_1
+Running with     : Tang Dynasty Release_2026.1_SP3
+                   Copyright (c) 2012-2026 Anlogic Inc.
+Top Model        : top_system
+Device           : PH1A180SFG676
+Speed            : 2
+
+Timing Mode      : final
+Setup            : WNS  6786ps  TNS        0ps  NUM_FEPS     0
+Hold             : WNS   124ps  TNS        0ps  NUM_FEPS     0
+
+Flow Statistics  :
+--------------------------------------------------------------------------------------------------
+     command     |  #calls  |  wall time  |  cpu time(s)  |  used memory(mb)  |  peak memory(mb)  
+--------------------------------------------------------------------------------------------------
+      place      |    1     |  27s(64%)   |   309(76%)    |       1677        |       1677        
+      route      |    1     |  11s(26%)   |    92(22%)    |       3349        |       3349        
+  import_device  |    1     |   4s(9%)    |     2(0%)     |       1192        |       1192        
+    fix_hold     |    1     |   0s(0%)    |     2(0%)     |       3348        |       3348        
+    import_db    |    1     |   0s(0%)    |     0(0%)     |       1207        |       1207        
+--------------------------------------------------------------------------------------------------
+      total      |    5     |     42s     |      405      |       3349        |       3349        
+--------------------------------------------------------------------------------------------------
